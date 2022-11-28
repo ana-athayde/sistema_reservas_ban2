@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from 'macros/table.html' import table_macro %}
+{% from 'macros/form.html' import form_macro %}
+{% block content %}
+    <div class="container">
+        <div class="text-center">
+            <h1> {{ title }} </h1>
+            {{ table_macro(table) }}
+            {% for form in forms %}
+                {{ form_macro(form) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

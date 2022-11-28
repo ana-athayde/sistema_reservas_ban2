@@ -1,0 +1,7 @@
+.table-responsive {
+    border: 1px solid black;
+}
+
+.my-table, form {
+    margin-bottom: 5%;
+}

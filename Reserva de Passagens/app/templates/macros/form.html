@@ -1,0 +1,26 @@
+{% macro form_macro(form) -%}
+    <form method="post">
+        {% for field, errors in form.errors.items() %}
+            <div class="alert alert-error">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+            </div>
+        {% endfor %}
+        {{ form.csrf_token }}
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    {% for field in form if field.widget.input_type != 'hidden' %}
+                        <th>{{ field.label(class_='form-label') }}</th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for field in form if field.widget.input_type != 'hidden' %}
+                        <td>{{ field(class_='form-control') }}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <br>
+        <input type="submit" class="w-25 btn btn-primary" value=Cadastrar>
+    </form>
+{%- endmacro %}
