@@ -4,7 +4,7 @@ from wtforms.fields import DateField
 from wtforms.validators import DataRequired
 
 class ReservaForm(FlaskForm):
-    id_reserva = IntegerField("Id Reserva", validators=[DataRequired()])
+	id_reserva = IntegerField("Id Reserva", validators=[DataRequired()])
 	prazo_validade = DateField("Prazo Validade", validators=[DataRequired()])
 	quantidade = IntegerField("Quantidade", validators=[DataRequired()])
 	emitido = BooleanField("Emitido", validators=[DataRequired()])

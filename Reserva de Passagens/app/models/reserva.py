@@ -1,6 +1,6 @@
 from app.app import db
 
-class Reserva(db.Model()):
+class Reserva(db.Model):
 	id_reserva = db.Column(db.Integer, primary_key=True)
 	prazo_validade = db.Column(db.Date)
 	quantidade = db.Column(db.Integer)

@@ -3,7 +3,7 @@ from wtforms import IntegerField, StringField, DecimalField, BooleanField
 from wtforms.validators import DataRequired
 
 class PagamentoForm(FlaskForm):
-    id_pagamento = IntegerField("Id Pagamento", validators=[DataRequired()])
+	id_pagamento = IntegerField("Id Pagamento", validators=[DataRequired()])
 	forma_pag = BooleanField("Forma Pagamento", validators=[DataRequired()])
 	total = DecimalField("Total", validators=[DataRequired()])
 	endereco_cob = StringField("Endereco Cobranca", validators=[DataRequired()])
