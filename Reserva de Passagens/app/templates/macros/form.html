@@ -15,7 +15,11 @@
                 </tr>
                 <tr>
                     {% for field in form if field.widget.input_type != 'hidden' %}
-                        <td>{{ field(class_='form-control') }}</td>
+                        {% if field.type == 'BooleanField' %}
+                            <td>{{ field(class_='form-check-input') }}</td>
+                        {% else %}
+                            <td>{{ field(class_='form-control') }}</td>
+                        {% endif %}
                     {% endfor %}
                 </tr>
             </table>

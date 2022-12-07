@@ -1,7 +1,7 @@
 from sqlalchemy.dialects import postgresql
 
 from app.app import db
-from app.models import Aeronave, Modelo_Aeronave
+from app.models import Aeronave, ModeloAeronave
 
 def get_all():
     # aeronaves = []
@@ -10,9 +10,9 @@ def get_all():
     #     aeronaves.append(aeronaves.__dict__)
     # return aeronaves
     return db.session.query(Aeronave.id_aeronave, Aeronave.total_assentos, Aeronave.id_modelo, \
-    Modelo_Aeronave.nome, Modelo_Aeronave.max_assentos, Modelo_Aeronave.empresa, Modelo_Aeronave.capacidade_b) \
-    .join(Modelo_Aeronave, Aeronave.id_modelo == Modelo_Aeronave.id_modelo, full = True) \
-    .order_by(Aeronave.id_modelo, Modelo_Aeronave.id_modelo).all()
+                            ModeloAeronave.nome, ModeloAeronave.max_assentos, ModeloAeronave.empresa, ModeloAeronave.capacidade_b) \
+    .join(ModeloAeronave, Aeronave.id_modelo == ModeloAeronave.id_modelo, full = True) \
+    .order_by(Aeronave.id_modelo, ModeloAeronave.id_modelo).all()
 
 
 # def get_cartoes():
