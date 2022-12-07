@@ -7,8 +7,6 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY reservas.sql /docker-entrypoint-initdb.d/init.sql
-
 COPY . .
 
 EXPOSE 80
